@@ -3,35 +3,18 @@
 #### 介绍
 魔兽世界的自动钓鱼程序,支持最新版和经典怀旧服;
 
-#### 软件架构
-软件架构说明
-
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. Win+R 调出运行窗口可以退出钓鱼进程;
+2. 将钓鱼图标拖动到动作条,并将其快捷键设置成F1;
+3. 滚动鼠标滚轮调整视距,调整到看不见人物位置(第一视角);
+4. 将视角调到水面占屏幕2/3处;
+5. 第一次运行需要先点击搜索特征码;
+6. 转到程序界面,点击开始钓鱼;
+7. 若灵敏度太高,则可以调整相应属性;
+8. 为了降低干扰,可以尽量关闭背景声音;
 
-#### 参与贡献
+#### 捐赠
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 码云特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+* [捐赠地址](DONATE.md)
