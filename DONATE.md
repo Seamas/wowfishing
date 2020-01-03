@@ -5,7 +5,7 @@
 ##### 软件是免费的,捐赠是可选的;
 
 * 微信
-* ![微信](weixin.png)
+![微信](weixin.png =400x600)
 
 * 支付宝
-* ![支付宝](zhifubao.jpg)
+![支付宝](zhifubao.jpg =400x600)
