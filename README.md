@@ -15,6 +15,10 @@
 7. 若灵敏度太高,则可以调整相应属性;
 8. 为了降低干扰,可以尽量关闭背景声音;
 
+#### 下载地址
+
+* [点击转到下载页面](https://gitee.com/milaoshu1020/wowfishing/releases)
+
 #### 捐赠
 
 * [捐赠地址](DONATE.md)
