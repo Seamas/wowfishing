@@ -15,6 +15,12 @@
 
 * [.Net Framework 4.0 下载地址](https://www.microsoft.com/zh-cn/download/details.aspx?id=17718)
 
+#### 自动鱼饵
+
+* 自动上饵需要在下载也页面下载并运行"自动鱼饵.vbx"
+* 运行.vbx文件需要到 https://github.com/milaoshu1020/NScript 下载安装最新版的脚本宿主程序;
+* 双击运行脚本;
+
 #### 捐赠
 
 * [捐赠地址](DONATE.md)
