@@ -1,4 +1,4 @@
-' 自动鱼饵脚本 v1.0 20200202
+' 自动鱼饵脚本 v2.0 20200202
 ' 作者: milaoshu1020
 ' 捐赠: https://gitee.com/milaoshu1020/wowfishing/blob/master/DONATE.md
 '
@@ -13,6 +13,9 @@ Imports System.Windows.Forms
 
 ' 自动鱼饵;
 Class AutoBait
+	Public Const DelGrayItemsCode As String = "/run for b=0,4 do for s=1,GetContainerNumSlots(b) do l=GetContainerItemLink(b,s) " &
+						"if l then _,_,r=GetItemInfo(l) if (r==0) then PickupContainerItem(b,s) DeleteCursorItem() end end end end"
+
 	Public Shared Sub Main()
 		Dim objShell As Object = CreateObject("wscript.shell")
 		Do
@@ -21,12 +24,22 @@ Class AutoBait
 				Dim kb As New Devices.Keyboard
 				' 暂停钓鱼;
 				kb.sendkeys("{F11}",True)
+				
+				' 清空背包中的垃圾;
 				kb.SendKeys("{enter}", True)
+				Clipboard.settext(delgrayitemscode)
+				kb.sendkeys("^v",True)
+				kb.SendKeys("{enter}", True)
+				' 等1秒钟,等执行完再继续;
+				Threading.Thread.Sleep(New TimeSpan(0, 0, 1))
+
 				' 使用最后1个背包,第1个背包格的物品,这里可以放鱼饵;
+				kb.SendKeys("{enter}", True)
 				kb.SendKeys("/cast 0 1", True)
 				kb.SendKeys("{enter}", True)
 				' 等待5秒钟,上完鱼饵再继续;
 				Threading.Thread.Sleep(New TimeSpan(0, 0, 5))
+
 				' 继续钓鱼
 				kb.sendkeys("{F10}",True)
 				' 等待10分钟,这里可以更改上饵时间;
