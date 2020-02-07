@@ -1,0 +1,42 @@
+' 自动鱼饵脚本 v1.0
+' 作者: milaoshu1020
+' 捐赠: https://gitee.com/milaoshu1020/wowfishing/blob/master/DONATE.md
+'
+' 运行方式:
+' 1. 到 https://github.com/milaoshu1020/NScript 下载安装最新版的脚本宿主程序;
+' 2. 双击运行脚本;
+Imports System.Windows.Forms
+
+' 自动上饵
+Class AutoBait
+	Public Shared Sub Main()
+		Dim objShell As Object = CreateObject("wscript.shell")
+		Do
+			' 检测魔兽世界窗口,没检测到就退出;
+			If objShell.AppActivate("魔兽世界", True) Then
+				Dim kb As New Devices.Keyboard
+				' 暂停钓鱼;
+				kb.sendkeys("{F11}",True)
+				kb.SendKeys("{enter}", True)
+				' 使用最后一个背包,第一个物品,这里可以放鱼饵;
+				kb.SendKeys("/cast 0 1", True)
+				kb.SendKeys("{enter}", True)
+				' 等待5秒钟,上完鱼饵再继续;
+				Threading.Thread.Sleep(New TimeSpan(0, 0, 5))
+				' 继续钓鱼
+				kb.sendkeys("{F10}",True)
+				' 等待10分钟,这里可以更改上饵时间;
+				Threading.Thread.Sleep(New TimeSpan(0, 10, 0))
+			Else
+				MsgBox("没有找到'魔兽世界'窗口! 退出...")
+				Exit Do
+			End If
+			
+			' 检测到"运行"窗口就退出,可以用Win+R打开运行窗口;
+			' 10分钟检测一次,想提前结束的话,可以结束nwscript.exe进程;
+			If objShell.Appactivate("运行", True) Then
+				Exit Do
+			End If
+		Loop
+	End Sub
+End Class
