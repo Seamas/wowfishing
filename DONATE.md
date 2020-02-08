@@ -6,4 +6,4 @@
 
 * 感谢您的慷慨捐赠!
 
-![微信](weixin.png)![支付宝](zhifubao.jpg)
+![微信](weixin.png)                  ![支付宝](zhifubao.jpg)
