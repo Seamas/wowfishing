@@ -19,7 +19,7 @@
 
 * 自动鱼饵需要在下载页面下载"自动鱼饵v?.vbx"脚本;
 * 运行脚本需要系统已经安装了 [NScript](https://github.com/milaoshu1020/NScript)([下载地址](https://github.com/milaoshu1020/NScript/releases));
-* 自动鱼饵脚本文件即可运行;
+* 双击自动鱼饵脚本文件即可运行;
 * 可以使用用记事本或者其他编辑器查看并编辑.vbx脚本文件;
 * 鱼饵脚本需要和钓鱼程序配合使用;
 
