@@ -1,17 +1,17 @@
-' ×Ô¶¯Óã¶ü½Å±¾ v2.0 20200207
-' ×÷Õß: milaoshu1020
-' ¾èÔù: https://gitee.com/milaoshu1020/wowfishing/blob/master/DONATE.md
+' è‡ªåŠ¨é±¼é¥µè„šæœ¬ v2.0 20200207
+' ä½œè€…: milaoshu1020
+' æèµ : https://gitee.com/milaoshu1020/wowfishing/blob/master/DONATE.md
 '
-' ÔËĞĞ·½Ê½:
-' 1. µ½ https://github.com/milaoshu1020/NScript ÏÂÔØ°²×°×îĞÂ°æµÄ½Å±¾ËŞÖ÷³ÌĞò;
-' 2. °ÑÓã¶ü·ÅÔÚ×îºó1¸ö±³°üµÄµÚ1¸ö±³°ü¸ñ(¾ÍÊÇÆ½Ê±·ÅÂ¯Ê¯µÄÎ»ÖÃ);
-' 3. ´ò¿ª"wow fishing"×Ô¶¯µöÓã³ÌĞò;
-' 4. Ë«»÷ÔËĞĞ½Å±¾;
-' 5. µã»÷Win+R,µ÷³ö"ÔËĞĞ"´°¿Ú¼´¿ÉÍË³ö½Å±¾;
-' 6. ÍË³öÄ§ÊŞÊÀ½çÒà¿É½áÊø½Å±¾;
+' è¿è¡Œæ–¹å¼:
+' 1. åˆ° https://github.com/milaoshu1020/NScript ä¸‹è½½å®‰è£…æœ€æ–°ç‰ˆçš„è„šæœ¬å®¿ä¸»ç¨‹åº;
+' 2. æŠŠé±¼é¥µæ”¾åœ¨æœ€å1ä¸ªèƒŒåŒ…çš„ç¬¬1ä¸ªèƒŒåŒ…æ ¼(å°±æ˜¯å¹³æ—¶æ”¾ç‚‰çŸ³çš„ä½ç½®);
+' 3. æ‰“å¼€"wow fishing"è‡ªåŠ¨é’“é±¼ç¨‹åº;
+' 4. åŒå‡»è¿è¡Œè„šæœ¬;
+' 5. ç‚¹å‡»Win+R,è°ƒå‡º"è¿è¡Œ"çª—å£å³å¯é€€å‡ºè„šæœ¬;
+' 6. é€€å‡ºé­”å…½ä¸–ç•Œäº¦å¯ç»“æŸè„šæœ¬;
 Imports System.Windows.Forms
 
-' ×Ô¶¯Óã¶ü;
+' è‡ªåŠ¨é±¼é¥µ;
 Class AutoBait
 	Public Const DelGrayItemsCode As String = "/run for b=0,4 do for s=1,GetContainerNumSlots(b) do l=GetContainerItemLink(b,s) " &
 						"if l then _,_,r=GetItemInfo(l) if (r==0) then PickupContainerItem(b,s) DeleteCursorItem() end end end end"
@@ -19,39 +19,39 @@ Class AutoBait
 	Public Shared Sub Main()
 		Dim objShell As Object = CreateObject("wscript.shell")
 		Do
-			' ¼ì²âÄ§ÊŞÊÀ½ç´°¿Ú,Ã»¼ì²âµ½¾ÍÍË³ö;
-			If objShell.AppActivate("Ä§ÊŞÊÀ½ç", True) Then
+			' æ£€æµ‹é­”å…½ä¸–ç•Œçª—å£,æ²¡æ£€æµ‹åˆ°å°±é€€å‡º;
+			If objShell.AppActivate("é­”å…½ä¸–ç•Œ", True) Then
 				Dim kb As New Devices.Keyboard
-				' ÔİÍ£µöÓã;
+				' æš‚åœé’“é±¼;
 				kb.sendkeys("{F11}",True)
 				
-				' Çå¿Õ±³°üÖĞµÄÀ¬»ø;
+				' æ¸…ç©ºèƒŒåŒ…ä¸­çš„åƒåœ¾;
 				kb.SendKeys("{enter}", True)
 				Clipboard.settext(delgrayitemscode)
 				kb.sendkeys("^v",True)
 				kb.SendKeys("{enter}", True)
-				' µÈ1ÃëÖÓ,µÈÖ´ĞĞÍêÔÙ¼ÌĞø;
+				' ç­‰1ç§’é’Ÿ,ç­‰æ‰§è¡Œå®Œå†ç»§ç»­;
 				Threading.Thread.Sleep(New TimeSpan(0, 0, 1))
 
-				' Ê¹ÓÃ×îºó1¸ö±³°ü,µÚ1¸ö±³°ü¸ñµÄÎïÆ·,ÕâÀï¿ÉÒÔ·ÅÓã¶ü;
+				' ä½¿ç”¨æœ€å1ä¸ªèƒŒåŒ…,ç¬¬1ä¸ªèƒŒåŒ…æ ¼çš„ç‰©å“,è¿™é‡Œå¯ä»¥æ”¾é±¼é¥µ;
 				kb.SendKeys("{enter}", True)
 				kb.SendKeys("/cast 0 1", True)
 				kb.SendKeys("{enter}", True)
-				' µÈ´ı5ÃëÖÓ,ÉÏÍêÓã¶üÔÙ¼ÌĞø;
+				' ç­‰å¾…5ç§’é’Ÿ,ä¸Šå®Œé±¼é¥µå†ç»§ç»­;
 				Threading.Thread.Sleep(New TimeSpan(0, 0, 5))
 
-				' ¼ÌĞøµöÓã
+				' ç»§ç»­é’“é±¼
 				kb.sendkeys("{F10}",True)
-				' µÈ´ı10·ÖÖÓ,ÕâÀï¿ÉÒÔ¸ü¸ÄÉÏ¶üÊ±¼ä;
+				' ç­‰å¾…10åˆ†é’Ÿ,è¿™é‡Œå¯ä»¥æ›´æ”¹ä¸Šé¥µæ—¶é—´;
 				Threading.Thread.Sleep(New TimeSpan(0, 10, 0))
 			Else
-				MsgBox("Ã»ÓĞÕÒµ½'Ä§ÊŞÊÀ½ç'´°¿Ú! ÍË³ö×Ô¶¯Óã¶ü½Å±¾...")
+				MsgBox("æ²¡æœ‰æ‰¾åˆ°'é­”å…½ä¸–ç•Œ'çª—å£! é€€å‡ºè‡ªåŠ¨é±¼é¥µè„šæœ¬...")
 				Exit Do
 			End If
 			
-			' ¼ì²âµ½"ÔËĞĞ"´°¿Ú¾ÍÍË³ö,¿ÉÒÔÓÃWin+R´ò¿ªÔËĞĞ´°¿Ú;
-			' 10·ÖÖÓ¼ì²âÒ»´Î,ÏëÌáÇ°½áÊøµÄ»°,¿ÉÒÔ½áÊønwscript.exe½ø³Ì;
-			If objShell.Appactivate("ÔËĞĞ", True) Then
+			' æ£€æµ‹åˆ°"è¿è¡Œ"çª—å£å°±é€€å‡º,å¯ä»¥ç”¨Win+Ræ‰“å¼€è¿è¡Œçª—å£;
+			' 10åˆ†é’Ÿæ£€æµ‹ä¸€æ¬¡,æƒ³æå‰ç»“æŸçš„è¯,å¯ä»¥ç»“æŸnwscript.exeè¿›ç¨‹;
+			If objShell.Appactivate("è¿è¡Œ", True) Then
 				Exit Do
 			End If
 		Loop
