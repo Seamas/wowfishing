@@ -1,0 +1,79 @@
+' 自动鱼饵脚本 v3.0 20200212
+' 作者: milaoshu1020
+' 详情: https://gitee.com/milaoshu1020/wowfishing
+'
+' 运行方式:
+' 1. 到 https://github.com/milaoshu1020/NScript 下载安装最新版的脚本宿主程序;
+' 2. 把鱼饵放在最后1个背包的第1个背包格(就是平时放炉石的位置);
+' 3. 打开"wow fishing"自动钓鱼程序;
+' 4. 双击运行脚本;
+' 5. 点击Win+R,调出"运行"窗口即可退出脚本;
+' 6. 退出魔兽世界亦可结束脚本;
+Imports System.Windows.Forms
+
+' 自动鱼饵;
+Class AutoBait
+	' 键盘对象;
+	Public Shared kb As New Devices.Keyboard
+	
+	' 通过剪贴板发送命令;
+	Public Shared Sub SendCmd(ByVal strCmd As String)
+		' 操作延迟;
+		Const delay As Integer = 200
+		
+		' 设置剪切板文本;
+		Clipboard.settext(strcmd)
+	
+		' 通过键盘按键发送命令;
+		Threading.Thread.Sleep(delay)
+		kb.SendKeys("{enter}", True)
+		Threading.Thread.Sleep(delay)
+		kb.sendkeys("+{insert}", True)
+		Threading.Thread.Sleep(delay)
+		kb.SendKeys("{enter}", True)
+		Threading.Thread.Sleep(delay)
+	End Sub
+	
+	' 主过程;
+	Public Shared Sub Main()
+		Dim objShell As Object = CreateObject("wscript.shell")
+		Do
+			' 检测魔兽世界窗口,没检测到就退出;
+			If objShell.AppActivate("魔兽世界", True) Then
+				' 暂停钓鱼;
+				kb.sendkeys("{F11}",True)
+				
+				' 清空背包中的垃圾;
+				sendcmd("/stopcasting")
+				sendcmd("/run for b=0,4 do for s=1,GetContainerNumSlots(b) do l=GetContainerItemLink(b,s) " &
+						"if l then _,_,r=GetItemInfo(l) if (r==0) then PickupContainerItem(b,s) DeleteCursorItem() end end end end")
+				' 等1秒钟,等执行完再继续;
+				Threading.Thread.Sleep(1000)
+
+				' 使用最后1个背包,第1个背包格的物品,这里可以放鱼饵;
+				sendcmd("/use 0 1")
+				sendcmd("/use 16")
+				Threading.Thread.Sleep(1000)
+				sendcmd("/click StaticPopup1Button1")
+				' 等待5秒钟,上完鱼饵再继续;
+				Threading.Thread.Sleep(5000)
+
+				' 继续钓鱼
+				kb.sendkeys("{F10}",True)
+			Else
+				MsgBox("没有找到'魔兽世界'窗口! 退出自动鱼饵脚本...")
+				Exit Do
+			End If
+
+			' 等待10分钟,这里可以更改上饵时间;
+			For i As Integer = 1 To 600
+				Threading.Thread.Sleep(1000)
+			
+				' 检测到"运行"窗口就退出,可以用Win+R打开运行窗口;
+				If objShell.Appactivate("运行", True) Then
+					Exit Sub
+				End If
+			Next
+		Loop
+	End Sub
+End Class
