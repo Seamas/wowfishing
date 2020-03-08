@@ -15,6 +15,11 @@
 
 * [.Net Framework 4.0 下载地址](https://www.microsoft.com/zh-cn/download/details.aspx?id=17718);
 
+#### VBX脚本的使用
+
+* 运行脚本需要系统已经安装了 [NScript](https://github.com/milaoshu1020/NScript)([下载地址](https://github.com/milaoshu1020/NScript/releases));
+* 安装完毕以后,双击VBX脚本即可运行;
+
 #### 捐赠
 
 * [捐赠地址](DONATE.md)
