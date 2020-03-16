@@ -22,6 +22,10 @@
 * 打开任务管理器,结束"wnscript.exe"进程可以终止脚本运行;
 * 你可以用记事本或者其他编辑器查看甚至编辑VBX文件;
 
+#### 常见问题
+
+* [点击查看](https://gitee.com/milaoshu1020/wowfishing/wikis/)
+
 #### 捐赠
 
 * [捐赠地址](DONATE.md)
