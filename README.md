@@ -9,7 +9,7 @@
 
 #### 下载地址
 
-* [点击转到下载页面](https://gitee.com/milaoshu1020/wowfishing/releases)
+在GITEE内捐赠wowfishing项目的用户将在1分钟内收到包含最新版下载地址的私信;
 
 如果运行不了请下载 .Net Framework 4.0 并安装:
 
@@ -25,7 +25,3 @@
 #### 常见问题
 
 * [点击查看](https://gitee.com/milaoshu1020/wowfishing/wikis/)
-
-#### 捐赠
-
-* [捐赠地址](DONATE.md)
