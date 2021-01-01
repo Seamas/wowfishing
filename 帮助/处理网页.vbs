@@ -8,9 +8,10 @@ msg = ""
 Set objfolder = fso.getfolder(curdir)
 
 For Each objfile In objfolder.files
-	If LCase(fso.getextensionname(objfile.name)) = "htm" Then
+	Select Case LCase(fso.getextensionname(objfile.name)) 
+	Case "htm", "html"
 		processfile objfile.path
-	End If
+	End Select
 Next
 
 msgbox msg & "全部处理完成!"
